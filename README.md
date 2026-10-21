@@ -2,9 +2,6 @@
 
 Credit card fraud detection on a highly imbalanced dataset, comparing **Logistic Regression** and **Random Forest** under four imbalance-handling strategies (none, class weights, undersampling, SMOTE).
 
-> B.Tech capstone project, School of Computer Science and Engineering, VIT-AP University.
-> <!-- TODO: add author names / GitHub profiles (with your teammates' permission) -->
-
 ## Why this project is evaluated the way it is
 
 Only 492 of 284,807 transactions (about 0.17%) are fraud. A model that labels *everything* as legitimate scores about **99.83% accuracy** while catching zero fraud, so accuracy alone says almost nothing here. This repo therefore:
@@ -77,17 +74,6 @@ Single stratified 80/20 split (seed 42), default 0.5 threshold. The untouched te
 
 *Caveat: with only 98 test frauds and one split, small differences (for example Random Forest none vs SMOTE) are within noise. Cross-validation would be needed to rank them with confidence.*
 
-## Note on the original capstone numbers
-
-The original report and notebook contain numbers that should not be compared with each other:
-
-| Reported | Where it came from |
-|---|---|
-| Logistic Regression 93.4% test accuracy | the **undersampled, balanced** 984-row dataset |
-| Random Forest 99.95% test accuracy, ROC-AUC 0.947 (LR) / 0.943 (RF) | the **full, imbalanced** dataset (notebook reloads `creditcard.csv`) |
-
-On the full dataset Logistic Regression also reached about 99.92% accuracy, barely above the 99.83% "always legit" baseline. The pipeline in this repo replaces those experiments with one consistent protocol.
-
 ## Limitations
 
 - Single train/test split and a fixed 0.5 threshold; no cross-validation or threshold tuning yet.
@@ -106,7 +92,3 @@ docs/           project_overview.md
 data/           put creditcard.csv here (git-ignored)
 ```
 
-## License
-
-<!-- TODO: add a LICENSE file (e.g. MIT) once all contributors agree. -->
-"# Secure-Pay-Vision" 
